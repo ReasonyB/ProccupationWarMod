@@ -1,17 +1,21 @@
 package io.github.reasonyb.proccupationwar.block;
 
+import io.github.reasonyb.proccupationwar.util.DyeColorProperty;
+import io.github.reasonyb.proccupationwar.util.PBlockStateProperties;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class RandomCottenBlock extends Block {
+public class RandomCottonBlock extends Block {
+  public static final DyeColorProperty COLOR = PBlockStateProperties.COLOR;
 
-  public RandomCottenBlock(Properties p_49795_) {
+  public RandomCottonBlock(Properties p_49795_) {
     super(p_49795_);
+    this.registerDefaultState(this.defaultBlockState().setValue(COLOR, DyeColor.LIGHT_GRAY));
   }
   
   public void stepOn(Level level,BlockPos pos, BlockState blockstate, Entity entity){
