@@ -18,6 +18,9 @@
     "color=lime": {
       "model": "minecraft:block/lime_wool"
     },
+    "color=pink": {
+      "model": "minecraft:block/pink_wool"
+    },
     "color=gray": {
       "model": "minecraft:block/gray_wool"
     },
