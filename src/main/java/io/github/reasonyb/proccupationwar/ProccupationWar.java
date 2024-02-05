@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 
 import io.github.reasonyb.proccupationwar.block.PBlocks;
 import io.github.reasonyb.proccupationwar.block.RandomTeamBlocks;
+import io.github.reasonyb.proccupationwar.client.screen.Keybindings;
 import io.github.reasonyb.proccupationwar.item.PItems;
 import io.github.reasonyb.proccupationwar.item.RandomTeamItems;
 import io.github.reasonyb.proccupationwar.item.WItems;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -102,6 +104,11 @@ public class ProccupationWar {
     {
       LOGGER.info("HELLO FROM CLIENT SETUP");
       LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+    }
+
+    @SubscribeEvent
+    public static void registerKeys(RegisterKeyMappingsEvent event){
+      event.register(Keybindings.TEAM_SETTER_MAPPING.get());
     }
   }
 }
