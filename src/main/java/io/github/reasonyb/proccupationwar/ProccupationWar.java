@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 
 import io.github.reasonyb.proccupationwar.block.PBlocks;
 import io.github.reasonyb.proccupationwar.block.RandomTeamBlocks;
+import io.github.reasonyb.proccupationwar.client.screen.KeyEventHandler;
 import io.github.reasonyb.proccupationwar.client.screen.Keybindings;
 import io.github.reasonyb.proccupationwar.item.PItems;
 import io.github.reasonyb.proccupationwar.item.RandomTeamItems;
@@ -66,6 +67,7 @@ public class ProccupationWar {
     CREATIVE_MODE_TABS.register(modEventBus);
 
     MinecraftForge.EVENT_BUS.register(this);
+    MinecraftForge.EVENT_BUS.register(KeyEventHandler.class);
 
     modEventBus.addListener(this::addCreative);
     
